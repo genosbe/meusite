@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dia dos namorados</title>
+
+    <style>
+        body {
+            background-color: red;
+            margin: 0;
+            padding: 0;
+        }
+
+        .painel {
+            margin: auto;
+            background-color: aliceblue;
+            width: 80%; /* Alterado para 80% da largura da tela */
+            max-width: 500px; /* Adicionado uma largura máxima para evitar que fique muito largo */
+            height: auto; /* Alterado para altura automática */
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 5%; /* Alterado para 5% do topo da tela */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative;
+        }
+
+        #sim,
+        #nao {
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: white;
+            border-radius: 10px;
+            color: white;
+            margin-top: 10px; /* Adicionado um espaço entre os botões */
+        }
+
+        @media (max-width: 600px) {
+            /* Estilo adicional para telas menores que 600px de largura */
+            .painel {
+                width: 90%; /* Ajuste a largura para 90% da tela em telas menores */
+            }
+
+            #nao {
+                margin-left: 0; /* Removido o espaçamento à esquerda para ocupar a largura total */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="painel">
+        <h1>Feliz dia dos namorados</h1>
+        <img src="https://gifman.net/wp-content/uploads/2019/06/ursinho-fofo-apaixonado.gif" alt="">
+        <h2>aceitas namorar comigo?</h2>
+        <button onclick="b" id="sim">sim!</button>
+        <button onclick="desvia(this)" onmouseover="desvia(this)" id="nao">Não!</button>
+    </div>
+
+    <script>
+        function desvia(btn) {
+            btn.style.position = 'absolute';
+            btn.style.bottom = geraPosicao(10, 90);
+            btn.style.left = geraPosicao(10, 90);
+            console.log('opa, desviei...');
+        }
+
+        function geraPosicao(min, max) {
+            return (Math.random() * (max - min) + min) + "%";
+        }
+    </script>
+</body>
+
+</html>
